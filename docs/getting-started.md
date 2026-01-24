@@ -2,10 +2,16 @@
 
 ## Prerequisites
 
-- A QualityMax account ([Sign up](https://app.qamax.co))
+- A QualityMax account
 - Your web application URL
 
+## Sign Up for Access
+
+Visit [app.qamax.co](https://app.qamax.co) and sign up for the waitlist. Authorise your email and wait for an invite with further instructions how to login. We will send it very soon.
+
 ## Quick Start
+
+Once you have access:
 
 ### Step 1: Create a Project
 
