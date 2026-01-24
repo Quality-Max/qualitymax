@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  Transform your web application into comprehensive test coverage with intelligent crawling and automated test generation.
+  Enforce your web application with comprehensive test coverage via intelligent crawling and automated test generation.
 </p>
 
 <p align="center">
