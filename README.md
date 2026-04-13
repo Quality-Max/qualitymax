@@ -5,109 +5,112 @@
 <h1 align="center">QualityMax</h1>
 
 <p align="center">
-  <strong>AI-Powered Test Case Generation Platform</strong>
+  <strong>AI-Native Test Automation Platform</strong>
 </p>
 
 <p align="center">
-  Enforce your web application with comprehensive test coverage via intelligent crawling and automated test generation.
+  Generate, execute, and self-heal tests for Go, Rust, Python, and Playwright — across your entire CI/CD pipeline.
 </p>
 
 <p align="center">
-  <a href="https://app.qamax.co"><img src="https://img.shields.io/badge/Website-app.qamax.co-7c3aed" alt="Website"></a>
+  <a href="https://qualitymax.io"><img src="https://img.shields.io/badge/Website-qualitymax.io-7c3aed" alt="Website"></a>
+  <a href="https://app.qualitymax.io"><img src="https://img.shields.io/badge/App-app.qualitymax.io-10b981" alt="App"></a>
   <a href="https://www.linkedin.com/company/qualitymax/"><img src="https://img.shields.io/badge/LinkedIn-QualityMax-0077B5" alt="LinkedIn"></a>
-  <a href="https://www.npmjs.com/package/qamax-auth-cli"><img src="https://img.shields.io/npm/v/qamax-auth-cli?color=7c3aed" alt="CLI"></a>
 </p>
 
 ---
 
 ## What is QualityMax?
 
-QualityMax is an AI-powered platform that automatically generates test cases by crawling your web application. It understands your UI, identifies user flows, and creates comprehensive test coverage - all without writing a single line of test code.
+QualityMax is the AI QA engineer for your team. Install the GitHub App, and on every pull request:
+
+- **AI reviews your code** — Claude Haiku analyzes the diff, flags security issues, posts inline annotations
+- **Runs your tests** — clones your repo, executes `go test` / `cargo test` / `pytest` on our cloud, reports pass/fail
+- **Runs AI-generated tests** — tests that QualityMax created from analyzing your codebase run alongside yours
+- **Reports results as a GitHub check** — directly on the PR
+
+Zero config. No YAML. No GitHub Actions minutes consumed.
+
+## How It Works
+
+```
+Install GitHub App -> Link repo -> Every PR gets:
+
+  Gate Alpha -- AI code review + SAST security scan
+  Gate Gamma -- Run your repo's own test suite
+  Gate Delta -- Run AI-generated tests
+  Results posted as GitHub check + PR comment
+```
 
 ## Key Features
 
 | Feature | Description |
 |---------|-------------|
-| **AI-Powered Crawling** | Intelligent web crawler that understands your application structure |
-| **Automatic Test Generation** | Generate test cases from discovered pages and user flows |
-| **Cloud Browser Execution** | Run generated tests directly in QualityMax Cloud Browser |
-| **TestRail Integration** | Seamlessly sync generated tests to your TestRail projects |
-| **Authenticated Crawling** | Capture and reuse authentication sessions for protected pages |
-| **Team Collaboration** | Share projects and test suites across your team |
-| **User Data Variables** | Manage test data with encrypted secrets support |
+| **Multi-Language Testing** | Go (`go test`), Rust (`cargo test`), Python (`pytest`), Playwright (browser E2E) |
+| **AI Test Generation** | Analyze your repo, identify test gaps, generate test cases and scripts |
+| **CI/CD Pipeline** | AI review + repo tests + AI tests on every PR |
+| **Cloud Execution** | Run tests on QualityMax infrastructure |
+| **Self-Healing Tests** | Broken Playwright tests auto-fix when selectors change |
+| **10 App Types** | CLI tools, TUI agents, libraries, mobile apps, browser extensions |
+| **MCP Integration** | Works with Claude Code and qmax-code as an AI agent tool |
+| **GitHub and GitLab** | Full support for both platforms |
 
-## Getting Started
+## Quick Start
 
-Visit [app.qamax.co](https://app.qamax.co) and sign up for the waitlist. Authorise your email and wait for an invite with further instructions how to login. We will send it very soon.
+### Option 1: GitHub App (recommended)
 
-Once you have access:
+1. Install the [QualityMax GitHub App](https://github.com/apps/qualitymaxapp) on your repo
+2. Import the repo at [app.qualitymax.io](https://app.qualitymax.io)
+3. Deep scan runs automatically, test areas identified, review and approve
+4. Tests generated and run on every future PR
 
-```
-1. Create Project →  Set up your first project with your application's URL
-2. Run AI Crawl   →  Let QualityMax discover pages and generate test cases
-3. Run & Export   →  Execute tests in Cloud Browser or export to your tools
-```
-
-## CLI Tool
-
-For authenticated crawling, use our CLI to capture browser sessions:
+### Option 2: CLI Agent
 
 ```bash
-# Install
-npm install -g qamax-auth-cli
+# Install qmax-code (Go TUI agent)
+brew install qualitymax/tap/qmax-code
 
-# Login to QualityMax
-qamax-auth login
-
-# Capture authentication
-qamax-auth capture https://your-app.com -p PROJECT_ID -n "my-auth"
+# Or use with Claude Code via MCP
+claude --mcp qualitymax
 ```
 
-See [qamax-auth-cli](https://github.com/Quality-Max/qamax-auth-cli) for more details.
+## Pipeline Architecture
 
-## Use Cases
+```
+PR Opened
+  Gate Alpha: AI Code Review + SAST (~17s)
+  Gate Gamma: Clone and Run Repo Tests (~30-60s)
+  Gate Delta: Run AI-Generated Tests (~30s)
+  Gate Beta: E2E Tests Against Preview Deploy (web apps only)
+```
 
-**QA Teams** - Accelerate test case creation and maintain comprehensive coverage as your application evolves.
+## Supported Languages
 
-**Developers** - Generate regression tests automatically when building new features.
-
-**Startups** - Get professional test coverage without dedicated QA resources.
-
-**Enterprises** - Scale testing across multiple projects with team collaboration features.
+| Language | Test Command | Cloud Execution | CI/CD Pipeline |
+|----------|-------------|-----------------|----------------|
+| **Go** | `go test -json ./...` | Yes | Yes |
+| **Rust** | `cargo test` | Yes | Yes |
+| **Python** | `pytest` | Yes | Yes |
+| **Playwright** | `npx playwright test` | Yes | Yes |
 
 ## Security
 
-We take security seriously:
-
-- All data encrypted at rest and in transit
-- SOC 2 Type II compliance (in progress)
-- GDPR compliant
-- Regular security audits
-
-See [SECURITY.md](SECURITY.md) for our security policy.
-
-## Documentation
-
-- [Getting Started Guide](docs/getting-started.md)
-- [AI Crawl Configuration](docs/ai-crawl.md)
-- [User Data Variables](docs/user-data-variables.md)
-- [API Reference](docs/api-reference.md)
+- Tests run in isolated environments with secrets-free env whitelist
+- Resource limits (4GB memory, 1024 processes) prevent abuse
+- GitHub App tokens scrubbed from all logs and error messages
+- Input validation on all webhook payloads
 
 ## Contact
 
 <p>
-  <a href="mailto:contact@qamax.co">contact@qamax.co</a> ·
-  <a href="https://www.linkedin.com/company/qualitymax/">LinkedIn</a> ·
-  <a href="https://app.qamax.co">Website</a> ·
-  <a href="https://github.com/Quality-Max/qualitymax/issues">Issues</a>
+  <a href="mailto:hello@qualitymax.io">hello@qualitymax.io</a> |
+  <a href="https://www.linkedin.com/company/qualitymax/">LinkedIn</a> |
+  <a href="https://qualitymax.io">Website</a> |
+  <a href="https://github.com/Quality-Max/qamax-rag-app/issues">Issues</a>
 </p>
-
-## Contributing
-
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
 <p align="center">
-  Copyright (c) 2025-2026 QualityMax. All rights reserved.
+  Built in Berlin | Copyright 2025-2026 QualityMax. All rights reserved.
 </p>
