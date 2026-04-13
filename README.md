@@ -103,9 +103,11 @@ PR Opened
 ## Contact
 
 <p>
-  <a href="mailto:hello@qualitymax.io">hello@qualitymax.io</a> |
+  <a href="mailto:contact@qualitymax.io">contact@qualitymax.io</a> |
   <a href="https://www.linkedin.com/company/qualitymax/">LinkedIn</a> |
+  |
   <a href="https://qualitymax.io">Website</a> |
+  <a href="https://discord.gg/qualitymax">Discord</a> |
   <a href="https://github.com/Quality-Max/qamax-rag-app/issues">Issues</a>
 </p>
 
