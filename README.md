@@ -16,6 +16,7 @@
   <a href="https://qualitymax.io"><img src="https://img.shields.io/badge/Website-qualitymax.io-7c3aed" alt="Website"></a>
   <a href="https://app.qualitymax.io"><img src="https://img.shields.io/badge/App-app.qualitymax.io-10b981" alt="App"></a>
   <a href="https://www.linkedin.com/company/qualitymax/"><img src="https://img.shields.io/badge/LinkedIn-QualityMax-0077B5" alt="LinkedIn"></a>
+  <a href="https://buymeacoffee.com/qualitymax"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-support-yellow?logo=buymeacoffee" alt="Buy Me a Coffee"></a>
 </p>
 
 ---
