@@ -108,8 +108,13 @@ PR Opened
   <a href="https://www.linkedin.com/company/qualitymax/">LinkedIn</a> ·
   <a href="https://discord.gg/kbEC28D4">Discord</a> ·
   <a href="https://qualitymax.io">Website</a> ·
-  <a href="https://github.com/Quality-Max/qamax-rag-app/issues">Issues</a>
+  <a href="https://github.com/Quality-Max/qualitymax/issues">Issues</a>
 </p>
+
+## License
+
+Proprietary — Copyright 2025-2026 QualityMax. All rights reserved.  
+See [LICENSE](LICENSE) for details.
 
 ---
 
