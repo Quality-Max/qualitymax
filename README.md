@@ -70,9 +70,19 @@ Install GitHub App -> Link repo -> Every PR gets:
 ```bash
 # Install qmax-code (Go TUI agent)
 brew install qualitymax/tap/qmax-code
+```
 
-# Or use with Claude Code via MCP
-claude --mcp qualitymax
+Or add QualityMax QA tools to Claude Code by placing a `.mcp.json` in your project root:
+
+```json
+{
+  "mcpServers": {
+    "qmax": {
+      "command": "npx",
+      "args": ["-y", "@qualitymax/qmax-mcp"]
+    }
+  }
+}
 ```
 
 ## Pipeline Architecture
