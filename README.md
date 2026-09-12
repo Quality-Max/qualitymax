@@ -1,133 +1,106 @@
-<p align="center">
-  <img src="assets/logo.png" alt="QualityMax" width="300">
-</p>
+# QualityMax
 
-<h1 align="center">QualityMax</h1>
+**Independent verification for AI-written code.**
 
-<p align="center">
-  <strong>AI-Native Test Automation Platform</strong>
-</p>
+Discover user journeys, generate and run tests, review changes, and inspect the evidence behind your next release.
 
-<p align="center">
-  Generate, execute, and self-heal tests for Go, Rust, Python, and Playwright — across your entire CI/CD pipeline.
-</p>
+[Website](https://qualitymax.io) · [Open QualityMax](https://app.qualitymax.io) · [Documentation](https://docs.qualitymax.io/) · [Standalone tools](https://docs.qualitymax.io/free-and-open-source/)
 
-<p align="center">
-  <a href="https://qualitymax.io"><img src="https://img.shields.io/badge/Website-qualitymax.io-7c3aed" alt="Website"></a>
-  <a href="https://app.qualitymax.io"><img src="https://img.shields.io/badge/App-app.qualitymax.io-10b981" alt="App"></a>
-  <a href="https://www.linkedin.com/company/qualitymax/"><img src="https://img.shields.io/badge/LinkedIn-QualityMax-0077B5" alt="LinkedIn"></a>
-  <a href="https://buymeacoffee.com/qualitymax"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-support-yellow?logo=buymeacoffee" alt="Buy Me a Coffee"></a>
-</p>
+This repository is the public product guide and documentation entry point. The hosted platform source is maintained separately. Individual tools below have their own source repositories, licenses, and requirements.
 
----
+## Choose your starting point
 
-## What is QualityMax?
+| I want to… | Start here |
+|---|---|
+| Generate coverage and inspect a first completed run | [Web app quickstart](https://docs.qualitymax.io/quickstart-web-app/) |
+| Connect my coding agent to hosted QualityMax | [MCP quickstart](https://docs.qualitymax.io/quickstart-mcp/) |
+| Use the platform CLI and local execution agent | [CLI quickstart](https://docs.qualitymax.io/quickstart-cli/) |
+| Try local tools without a QualityMax account | [Standalone tools guide](https://docs.qualitymax.io/free-and-open-source/) |
+| Evaluate QualityMax for my team | [Team evaluator guide](https://docs.qualitymax.io/persona-team-evaluator/) |
 
-QualityMax is the AI QA engineer for your team. Install the GitHub App, and on every pull request:
+Hosted workflows require a QualityMax account and use the allowances of your plan. Standalone tools have separate prerequisites; model providers, coding-agent subscriptions, and your own compute can have costs.
 
-- **AI reviews your code** — Claude Haiku analyzes the diff, flags security issues, posts inline annotations
-- **Runs your tests** — clones your repo, executes `go test` / `cargo test` / `pytest` on our cloud, reports pass/fail
-- **Runs AI-generated tests** — tests that QualityMax created from analyzing your codebase run alongside yours
-- **Reports results as a GitHub check** — directly on the PR
+## From a user journey to reviewable evidence
 
-Zero config. No YAML. No GitHub Actions minutes consumed.
-
-## How It Works
-
-```
-Install GitHub App -> Link repo -> Every PR gets:
-
-  Gate Alpha -- AI code review + SAST security scan
-  Gate Gamma -- Run your repo's own test suite
-  Gate Delta -- Run AI-generated tests
-  Results posted as GitHub check + PR comment
+```mermaid
+flowchart LR
+    A[Discover journeys] --> B[Review generated tests]
+    B --> C[Execute tests]
+    C --> D[Inspect results and artifacts]
+    D --> E[Review findings or repairs]
+    E --> F[Rerun and retain evidence]
 ```
 
-## Key Features
+QualityMax organizes work as **Projects → Test Cases → Automation Scripts**. A test case records expected behavior; scripts implement that intent for a framework. Inspect the completed execution and its available artifacts before treating a queued job or a generated script as proof. [Core concepts](https://docs.qualitymax.io/core-concepts/)
 
-| Feature | Description |
-|---------|-------------|
-| **Multi-Language Testing** | Go (`go test`), Rust (`cargo test`), Python (`pytest`), Playwright (browser E2E) |
-| **AI Test Generation** | Analyze your repo, identify test gaps, generate test cases and scripts |
-| **CI/CD Pipeline** | AI review + repo tests + AI tests on every PR |
-| **Cloud Execution** | Run tests on QualityMax infrastructure |
-| **Self-Healing Tests** | Broken Playwright tests auto-fix when selectors change |
-| **10 App Types** | CLI tools, TUI agents, libraries, mobile apps, browser extensions |
-| **MCP Integration** | Works with Claude Code and qmax-code as an AI agent tool |
-| **GitHub and GitLab** | Full support for both platforms |
+## Explore the platform
 
-## Quick Start
+| Capability | What to expect | Documentation |
+|---|---|---|
+| Discovery and generation | Discover application journeys and produce reviewable cases and scripts | [Discovery & Generation](https://docs.qualitymax.io/discovery-generation/) |
+| PR verification | Review changes, run supported suites, and check deployed previews | [Code Review & Gates](https://docs.qualitymax.io/code-review-gates/) |
+| Nexus | Specialist reviews with attributed findings and shareable reports | [Nexus review](https://docs.qualitymax.io/nexus-review/) |
+| AI application validation | Conversation evaluation, adversarial evaluations, and hallucination checks | [AI validation](https://docs.qualitymax.io/ai-validation/) |
+| Agentic Eyes | Simulated browser journeys with observations about usability and friction | [Agentic Eyes](https://docs.qualitymax.io/agentic-eyes/) |
+| Self-healing | Investigate failed tests and review proposed repairs | [Self-healing](https://docs.qualitymax.io/self-healing/) |
+| Slack | Project-aware questions and supported actions through proposals and approval | [Slack](https://docs.qualitymax.io/slack/) |
+| Grounded project context | Reuse verified facts and inspect their sources | [Memory & Grounding](https://docs.qualitymax.io/memory-grounding/) |
+| Test management and portability | Organize cases/scripts, import assets, and exchange QTML | [Test management](https://docs.qualitymax.io/test-management/) · [QTML](https://docs.qualitymax.io/export-qtml/) |
+| Performance | k6 workflows and migration guides for existing performance assets | [Performance](https://docs.qualitymax.io/performance/) |
+| Mobile | Responsive readiness audits and managed mobile-flow guidance | [Mobile](https://docs.qualitymax.io/mobile/) |
+| Evidence | Interpret execution artifacts, signed verdicts, and exposure receipts | [Evidence & Trust](https://docs.qualitymax.io/evidence-trust/) |
 
-### Option 1: GitHub App (recommended)
+### Understand the PR gates
 
-1. Install the [QualityMax GitHub App](https://github.com/apps/qualitymaxapp) on your repo
-2. Import the repo at [app.qualitymax.io](https://app.qualitymax.io)
-3. Deep scan runs automatically, test areas identified, review and approve
-4. Tests generated and run on every future PR
+| Gate | Purpose | Behavior |
+|---|---|---|
+| Alpha | Review the diff and run static security checks | Blocking verdicts can fail the check |
+| Gamma | Run a detected, supported native test suite | Failures can fail the check; skips when there is no applicable suite |
+| Delta | Run QualityMax-generated project scripts | Advisory warnings |
+| Beta | Run browser tests against a deployed preview | Triggered by the successful deployment event; failures can fail the check |
 
-### Option 2: CLI Agent
+Configure your repository's required checks for merge enforcement. Enabled gates, supported frameworks, preview deployment events, and project settings determine what runs. The GitHub App and the explicit GitHub Action have different setup and execution paths. See [gate verdicts](https://docs.qualitymax.io/code-review-gates-verdicts/) for the decision rules.
 
-```bash
-# Install qmax-code (Go TUI agent)
-brew install qualitymax/tap/qmax-code
-```
+Nexus on-demand specialist review is a separate workflow from automatic PR review. A Slack reply from one active specialist does not imply that a full multi-persona review ran.
 
-Or add QualityMax QA tools to Claude Code by placing a `.mcp.json` in your project root:
+## Local tools and integrations
 
-```json
-{
-  "mcpServers": {
-    "qmax": {
-      "command": "npx",
-      "args": ["-y", "@qualitymax/qmax-mcp"]
-    }
-  }
-}
-```
+| Project | Use it for | License / status |
+|---|---|---|
+| [qmax-mcp](https://github.com/Quality-Max/qmax-mcp) | Four standalone MCP tools: scan, inspect, generate a Playwright reproduction, run a test | MIT |
+| [qmax-code](https://github.com/Quality-Max/qmax-code) | A QA terminal agent with standalone and hosted-connected modes | Source available, FSL-1.1-ALv2 |
+| [Free QA Skills](https://github.com/Quality-Max/free-qa-skills) | QA workflows inside supported coding agents | Apache-2.0 |
+| [9lives](https://github.com/Quality-Max/9lives) | Local test repair, reruns, and reviewable diffs | MIT; prototype |
+| [Test Grader](https://github.com/Quality-Max/qualitymax-grader) | Static Playwright test-quality grading | Apache-2.0 |
+| [Supply Chain Scanner](https://github.com/Quality-Max/supply-chain-scanner) | Python dependency supply-chain checks | Apache-2.0 |
+| [qmax local agent](https://github.com/Quality-Max/qmax-local-agent) | Platform CLI and local test execution | Apache-2.0 |
+| [GitHub Action](https://github.com/Quality-Max/qualitymax-github-action) | Explicit CI workflows with results and report links | MIT |
+| [n8n integration](https://github.com/Quality-Max/n8n-nodes-qualitymax) | Connect project, test, and performance workflows | MIT |
+| [qmax-receipt](https://github.com/Quality-Max/qmax-receipt) | Shared signed exposure-receipt schema | MIT |
 
-## Pipeline Architecture
+**Local MCP versus hosted MCP:** starting the standalone qmax-mcp package exposes its local tools without a QualityMax account. To use hosted projects and execution, follow the [hosted MCP quickstart](https://docs.qualitymax.io/quickstart-mcp/) or the package's documented proxy mode. They are distinct connection paths.
 
-```
-PR Opened
-  Gate Alpha: AI Code Review + SAST (~17s)
-  Gate Gamma: Clone and Run Repo Tests (~30-60s)
-  Gate Delta: Run AI-Generated Tests (~30s)
-  Gate Beta: E2E Tests Against Preview Deploy (web apps only)
-```
+For qmax-code installation, use the [maintained source README](https://github.com/Quality-Max/qmax-code#install) and [latest release](https://github.com/Quality-Max/qmax-code/releases/latest). Advanced terminal commands can be experimental; check the source README for current availability.
 
-## Supported Languages
+## See concrete examples
 
-| Language | Test Command | Cloud Execution | CI/CD Pipeline |
-|----------|-------------|-----------------|----------------|
-| **Go** | `go test -json ./...` | Yes | Yes |
-| **Rust** | `cargo test` | Yes | Yes |
-| **Python** | `pytest` | Yes | Yes |
-| **Playwright** | `npx playwright test` | Yes | Yes |
+- [Local MCP walkthrough](https://github.com/Quality-Max/qmax-mcp/tree/main/demo): inspection, reproduction, and execution artifacts.
+- [9lives repair demo](https://github.com/Quality-Max/9lives/blob/main/demo/heal.gif): a local repair workflow.
+- [Test Grader examples](https://github.com/Quality-Max/qualitymax-grader#live-example): sample grades and actionable findings.
+- [n8n regression-to-Slack workflow](https://github.com/Quality-Max/n8n-nodes-qualitymax#hero-workflow): an integration template with setup requirements.
+- [CI example repository](https://github.com/Quality-Max/qualitymax-demo-playground): inspect the example and its current run history.
+- [Self-healing sandbox cookbook](https://github.com/Quality-Max/e2b-cookbook-self-healing-tests): a separate example with its own provider and compute requirements.
 
-## Security
+These examples demonstrate their named workflows; they are not live production certifications or universal performance benchmarks. The [example guide](docs/examples.md) explains what to inspect.
 
-- Tests run in isolated environments with secrets-free env whitelist
-- Resource limits (4GB memory, 1024 processes) prevent abuse
-- GitHub App tokens scrubbed from all logs and error messages
-- Input validation on all webhook payloads
+## Deployment and embedding
 
-## Contact
+The hosted application is the standard evaluation path. Sovereign is a **private preview** with design partners; supported topology and operational responsibilities are agreed during evaluation. [Deployment guide](https://docs.qualitymax.io/deployment/)
 
-<p>
-  <a href="mailto:contact@qualitymax.io">contact@qualitymax.io</a> ·
-  <a href="https://www.linkedin.com/company/qualitymax/">LinkedIn</a> ·
-  <a href="https://discord.gg/kbEC28D4">Discord</a> ·
-  <a href="https://qualitymax.io">Website</a> ·
-  <a href="https://github.com/Quality-Max/qualitymax/issues">Issues</a>
-</p>
+For embedding workflows and evaluating branding requirements, see [Partner / White-label](https://docs.qualitymax.io/partner-white-label/).
 
-## License
+## Help and contributions
 
-Proprietary — Copyright 2025-2026 QualityMax. All rights reserved.  
-See [LICENSE](LICENSE) for details.
+Use [documentation](https://docs.qualitymax.io/) for setup and product behavior, [issues](https://github.com/Quality-Max/qualitymax/issues) for public bugs and documentation feedback, and [CONTRIBUTING.md](CONTRIBUTING.md) for contributions. Report sensitive issues through [SECURITY.md](SECURITY.md).
 
----
-
-<p align="center">
-  Built in Berlin | Copyright 2025-2026 QualityMax. All rights reserved.
-</p>
+This repository's [license](LICENSE) is separate from the licenses of the individual tools linked above.

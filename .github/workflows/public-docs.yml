@@ -1,0 +1,30 @@
+name: Public documentation
+
+on:
+  pull_request:
+    paths: ["**.md", ".github/workflows/public-docs.yml"]
+  push:
+    branches: [main]
+    paths: ["**.md", ".github/workflows/public-docs.yml"]
+  workflow_dispatch:
+  schedule:
+    - cron: "19 8 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Require the canonical documentation entry point
+        run: python3 -c "from pathlib import Path; assert 'https://docs.qualitymax.io/' in Path('README.md').read_text(), 'The entry README must link to canonical documentation'"
+      - name: Check Markdown links and local anchors
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        with:
+          lycheeVersion: v0.24.2
+          args: --no-progress --include-fragments --timeout 30 --max-retries 2 '*.md' 'docs/**/*.md'
+          fail: true
+          jobSummary: true

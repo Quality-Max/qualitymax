@@ -1,45 +1,12 @@
-# Getting Started with QualityMax
+# Getting started with QualityMax
 
-## Prerequisites
+Sign in at [app.qualitymax.io](https://app.qualitymax.io), then choose the guide for your workflow:
 
-- A QualityMax account
-- Your web application URL
+- [Web app quickstart](https://docs.qualitymax.io/quickstart-web-app/): create a project, generate coverage, and inspect a completed execution.
+- [Hosted MCP quickstart](https://docs.qualitymax.io/quickstart-mcp/): connect a coding agent using its supported authentication path.
+- [CLI quickstart](https://docs.qualitymax.io/quickstart-cli/): use the platform CLI and local execution agent.
+- [Standalone tools](https://docs.qualitymax.io/free-and-open-source/): local tools that do not require a QualityMax account.
 
-## Sign Up for Access
+Start with a small journey in an environment you control. Review the generated assertion, run the test, and inspect its completed result and available artifacts.
 
-Visit [app.qamax.co](https://app.qamax.co) and sign up for the waitlist. Authorise your email and wait for an invite with further instructions how to login. We will send it very soon.
-
-## Quick Start
-
-Once you have access:
-
-### Step 1: Create a Project
-
-1. Log in to QualityMax
-2. Click "New Project"
-3. Enter your project name and main URL
-4. Click "Create"
-
-### Step 2: Run AI Crawl
-
-1. Open your project
-2. Click "AI Crawl"
-3. Configure crawl settings (depth, page limit, etc.)
-4. Click "Start Crawl"
-
-### Step 3: Review Generated Tests
-
-1. Once the crawl completes, review discovered pages
-2. QualityMax automatically generates test cases
-3. Edit, approve, or regenerate tests as needed
-
-### Step 4: Export
-
-1. Select tests to export
-2. Choose your preferred format or integration
-3. Click "Export"
-
-## Next Steps
-
-- [Configure AI Crawl](ai-crawl.md)
-- [Manage User Data Variables](user-data-variables.md)
+For authentication, integration settings, requirements, and troubleshooting, use the [canonical documentation](https://docs.qualitymax.io/). This page links to those maintained instructions rather than duplicating them.

@@ -1,27 +1,7 @@
-# Security Policy
+# Security policy
 
-## Reporting a Vulnerability
+Report a suspected vulnerability privately to **contact@qualitymax.io**. Include the affected repository or product, version, impact, and a concise reproduction using a controlled example. Do not include live credentials or customer data, and do not open a public issue containing sensitive details.
 
-If you discover a security vulnerability, please email us at contact@qamax.co with:
+We will coordinate investigation and disclosure with you. Avoid accessing or changing other users' data. A repository-specific security policy takes precedence over the organization default.
 
-- Description of the vulnerability
-- Steps to reproduce
-- Potential impact
-
-We will respond within 48 hours and work with you to resolve the issue.
-
-## Security Measures
-
-- All data encrypted at rest (AES-256) and in transit (TLS 1.3)
-- Secrets stored with Fernet encryption
-- Regular dependency audits
-- No customer data stored in public repositories
-- Role-based access control
-
-## Responsible Disclosure
-
-We ask that you:
-
-- Give us reasonable time to fix issues before public disclosure
-- Avoid accessing or modifying other users' data
-- Act in good faith
+For ordinary bugs and documentation feedback, use the repository issue tracker. Product guidance is available at [docs.qualitymax.io](https://docs.qualitymax.io/).
