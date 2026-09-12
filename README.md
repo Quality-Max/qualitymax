@@ -1,3 +1,20 @@
+```text
+                         ╱|、
+                        (˚ˎ 。7
+                         |、˜〵
+                         じしˍ,)ノ
+
+            ██████╗ ███╗   ███╗ █████╗ ██╗  ██╗
+           ██╔═══██╗████╗ ████║██╔══██╗╚██╗██╔╝
+           ██║   ██║██╔████╔██║███████║ ╚███╔╝
+           ██║▄▄ ██║██║╚██╔╝██║██╔══██║ ██╔██╗
+           ╚██████╔╝██║ ╚═╝ ██║██║  ██║██╔╝ ██╗
+            ╚══▀▀═╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
+
+                   q u a l i t y m a x
+       Independent verification for AI-written code
+```
+
 # QualityMax
 
 **Independent verification for AI-written code.**
@@ -22,13 +39,24 @@ Hosted workflows require a QualityMax account and use the allowances of your pla
 
 ## From a user journey to reviewable evidence
 
-```mermaid
-flowchart LR
-    A[Discover journeys] --> B[Review generated tests]
-    B --> C[Execute tests]
-    C --> D[Inspect results and artifacts]
-    D --> E[Review findings or repairs]
-    E --> F[Rerun and retain evidence]
+```text
+┌─ FROM JOURNEY TO EVIDENCE ───────────────────────────────┐
+│                                                          │
+│   01  DISCOVER    Map application journeys               │
+│        │                                                 │
+│   02  GENERATE    Create cases and scripts               │
+│        │                                                 │
+│   03  REVIEW      Check intent and assertions            │
+│        │                                                 │
+│   04  EXECUTE     Run the reviewed tests                 │
+│        │                                                 │
+│   05  INSPECT     Read results and available artifacts   │
+│        │                                                 │
+│   06  REFINE      Review repairs if needed; rerun        │
+│        │                                                 │
+│        └────────> Retain the evidence                    │
+│                                                          │
+└──────────────────────────────────────────────────────────┘
 ```
 
 QualityMax organizes work as **Projects → Test Cases → Automation Scripts**. A test case records expected behavior; scripts implement that intent for a framework. Inspect the completed execution and its available artifacts before treating a queued job or a generated script as proof. [Core concepts](https://docs.qualitymax.io/core-concepts/)
@@ -64,6 +92,25 @@ Configure your repository's required checks for merge enforcement. Enabled gates
 Nexus on-demand specialist review is a separate workflow from automatic PR review. A Slack reply from one active specialist does not imply that a full multi-persona review ran.
 
 ## Local tools and integrations
+
+```text
+┌─ FIND YOUR WORKSPACE ────────────────────────────────────┐
+│                                                          │
+│   QualityMax                                             │
+│   ├── In the browser                                     │
+│   │   └── Hosted projects, tests, runs, and reports      │
+│   ├── In your terminal                                   │
+│   │   ├── qmax-code       Coding and QA agent            │
+│   │   └── qmax            Platform CLI / local agent     │
+│   ├── In your coding agent                               │
+│   │   ├── qmax-mcp        Local browser QA tools         │
+│   │   └── Free QA Skills  Reusable QA workflows          │
+│   └── In your workflow                                   │
+│       ├── GitHub          PR checks and Actions          │
+│       └── n8n / Slack     Integrations and context       │
+│                                                          │
+└──────────────────────────────────────────────────────────┘
+```
 
 | Project | Use it for | License / status |
 |---|---|---|
